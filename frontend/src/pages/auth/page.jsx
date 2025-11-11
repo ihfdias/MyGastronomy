@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { TextField, Button } from "@mui/material"
+import StyleSheet from "./auth.module.css"
 
 export default function Auth() {
     const [formType, setFormType] = useState('login')
@@ -15,7 +16,7 @@ export default function Auth() {
 
     if(formType === 'login') {
         return (
-            <>
+            <div className={StyleSheet.authPageContainer}>
                 <h1>Login</h1>
                 <button onClick={handleChangeFormType}>Don't you have an account? Click here</button>
                 <form>
@@ -33,7 +34,7 @@ export default function Auth() {
                     />
                     <Button type="submit">Login</Button>
                 </form>
-            </>
+            </div>
 
     )
 }
